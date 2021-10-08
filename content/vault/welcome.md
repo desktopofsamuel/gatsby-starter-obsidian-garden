@@ -3,6 +3,7 @@ title: Welcome
 tags:
   - welcome
   - blog
+  - OKR
 category: "evergreen"
 ---
 

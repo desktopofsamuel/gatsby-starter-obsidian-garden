@@ -5,6 +5,7 @@ tags:
   - learning
   - thinking
   - notes
+  - OKR
 category: "evergreen"
 ---
 

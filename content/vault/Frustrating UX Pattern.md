@@ -2,6 +2,7 @@
 title: Frustrating UX Pattern
 tags:
   - UX
+  - OKR
 category: "past"
 ---
 ## Hamburger Menu
