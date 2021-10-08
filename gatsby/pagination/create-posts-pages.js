@@ -10,8 +10,8 @@ module.exports = async (graphql, actions) => {
     {
       allMdx(
         filter: {
-          frontmatter: { draft: { ne: true } }
-          fileAbsolutePath: { regex: "/posts/" }
+          frontmatter: { publish: { ne: false } }
+          fileAbsolutePath: { regex: "/vault/" }
         }
       ) {
         totalCount
