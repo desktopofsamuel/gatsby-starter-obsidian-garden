@@ -67,17 +67,17 @@ const onCreateNode = ({ node, actions, getNode }) => {
       value: processedFrontmatterDate || processedFileDate,
     });
 
-    // if (node.frontmatter.tags) {
-    //   const tagSlugs = node.frontmatter.tags.map(
-    //     (tag) => `/tag/${kebabCase(tag)}/`,
-    //   );
-    //   createNodeField({ node, name: 'tagSlugs', value: tagSlugs });
-    // }
+    if (node.frontmatter.tags) {
+      const tagSlugs = node.frontmatter.tags.map(
+        (tag) => `/tag/${kebabCase(tag)}/`,
+      );
+      createNodeField({ node, name: 'tagSlugs', value: tagSlugs });
+    }
 
-    // if (node.frontmatter.category) {
-    //   const categorySlug = `/category/${kebabCase(node.frontmatter.category)}/`;
-    //   createNodeField({ node, name: 'categorySlug', value: categorySlug });
-    // }
+    if (node.frontmatter.category) {
+      const categorySlug = `/category/${kebabCase(node.frontmatter.category)}/`;
+      createNodeField({ node, name: 'categorySlug', value: categorySlug });
+    }
   }
 };
 

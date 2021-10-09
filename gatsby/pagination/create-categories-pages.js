@@ -12,8 +12,8 @@ module.exports = async (graphql, actions) => {
     {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/posts/" }
-          frontmatter: { draft: { ne: true } }
+          frontmatter: { publish: { ne: false } }
+          fileAbsolutePath: { regex: "/vault/" }
         }
       ) {
         group(field: frontmatter___category) {

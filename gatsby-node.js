@@ -29,6 +29,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String!
       slug: String!
       date: Date!
+      tagSlugs: String
+      categorySlug: String
     }
   `;
 
