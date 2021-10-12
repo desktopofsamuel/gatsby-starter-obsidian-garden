@@ -65,15 +65,14 @@ export const query = graphql`
             slug
             title
             date
-            # categorySlug
+            categorySlug
           }
           excerpt(pruneLength: 300)
           frontmatter {
             title
             date
-            # category
-            # description
-            # tags
+            category
+            tags
           }
         }
       }

@@ -47,7 +47,7 @@ const NoteList = ({ edges }: EdgesType) => (
             color="secondary.400"
             fontWeight="bold"
           >
-            {/* {edge.node.frontmatter.category} */}
+            {edge.node.frontmatter.category}
           </Text>
         </HStack>
         <Link to={edge.node.fields.slug}>
@@ -60,7 +60,7 @@ const NoteList = ({ edges }: EdgesType) => (
         </Text>
         <Link to={edge.node.fields.slug}>
           <Button variant="ghost" ml="-18px">
-            閱讀更多
+            Read More
           </Button>
         </Link>
       </VStack>
