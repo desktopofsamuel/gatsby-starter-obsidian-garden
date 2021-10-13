@@ -55,17 +55,27 @@ const onCreateNode = ({ node, actions, getNode }) => {
     });
 
     const date = fileNode.birthTime;
-    const dateFormat = `MMMM YYYY`;
+    const dateFormat = `DD MMM YYYY`;
     const processedFileDate = dayjs(date).format(dateFormat);
-    const processedFrontmatterDate = dayjs(node.frontmatter.date).format(
-      dateFormat,
-    );
 
-    createNodeField({
-      node,
-      name: 'date',
-      value: processedFrontmatterDate || processedFileDate,
-    });
+    if (node.frontmatter.date) {
+      const processedFrontmatterDate = dayjs(node.frontmatter.date).format(
+        dateFormat,
+      );
+      createNodeField({
+        node,
+        name: 'date',
+        value: processedFrontmatterDate,
+      });
+    } else {
+      createNodeField({
+        node,
+        name: 'date',
+        value: processedFileDate,
+      });
+    }
+
+    console.log(processedFrontmatterDate, processedFileDate);
 
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map(

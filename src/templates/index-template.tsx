@@ -57,7 +57,7 @@ export const query = graphql`
       }
       limit: $postsLimit
       skip: $postsOffset
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {

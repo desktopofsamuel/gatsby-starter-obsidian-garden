@@ -52,8 +52,8 @@ export const query = graphql`
     allMdx(
       limit: $postsLimit
       skip: $postsOffset
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { publish: { ne: false }, tags: { in: [$tag] } } }
+      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {
@@ -62,6 +62,7 @@ export const query = graphql`
             title
             slug
             categorySlug
+            date
           }
           frontmatter {
             title
