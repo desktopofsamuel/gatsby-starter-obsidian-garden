@@ -31,6 +31,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       date: Date!
       tagSlugs: String
       categorySlug: String
+      tagList: [Object]
     }
   `;
 
