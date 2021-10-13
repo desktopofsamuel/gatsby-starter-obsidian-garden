@@ -1,5 +1,6 @@
 ---
 tags: [ mvp, product ]
+date: 2021/10/13
 ---
 
 # Minimal Viable Product
