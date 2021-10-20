@@ -1,9 +1,7 @@
 ---
 title: Markdown
 tags:
-  - language
-  - formatting
-  - tool
+  - markdown
 category: "evergreen"
 ---
 
