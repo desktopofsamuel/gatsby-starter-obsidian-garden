@@ -6,7 +6,7 @@ tag: null
 publish: false
 ---
 
-This project is work in progress. 
+This project is still work in progress. 
 
 # Todo
 
