@@ -6,7 +6,7 @@ import Pagination from '@/components/pagination';
 import Helmet from 'react-helmet';
 import { PageContext, AllMdx } from '@/type';
 import { useSiteMetadata } from '../hooks';
-import { SimpleGrid, Divider, Heading, Text } from '@chakra-ui/react';
+import { Box, SimpleGrid, Divider, Heading, Text } from '@chakra-ui/react';
 
 type Props = {
   data: AllMdx;
@@ -24,17 +24,22 @@ const IndexPage = ({ data, pageContext }: Props) => {
   } = useSiteMetadata();
   const pageTitle =
     currentPage > 0
-      ? `所有文章 — 第${currentPage}頁 | ${siteTitle}`
+      ? `All Pages —  Page ${currentPage} | ${siteTitle}`
       : siteTitle;
 
   return (
     <Layout subtitle={siteSubtitle} description={siteDescription}>
       <Helmet title={pageTitle} />
-      {hasPrevPage === false && (
-        <>
-          <Divider my="10" />
-        </>
-      )}
+      <Box my="10">
+        <Heading as="h1">Gatsby Garden</Heading>
+        <Text>
+          Free Gatsby starter template to host your own digital garden for free,
+          created by Obsidian.
+        </Text>
+      </Box>
+
+      <Divider my="10" />
+
       <NoteList edges={edges} />
       {(hasPrevPage || hasNextPage) && (
         <Pagination

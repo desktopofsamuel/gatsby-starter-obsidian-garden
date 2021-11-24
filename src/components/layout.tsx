@@ -49,6 +49,7 @@ const Layout: React.FC = ({
         <Container maxW="container.md">
           <Box>{children}</Box>
         </Container>
+        <Footer />
       </ChakraProvider>
     </>
   );

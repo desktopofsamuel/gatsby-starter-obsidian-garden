@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, HStack, VStack, Button } from '@chakra-ui/react';
+import { Grid, Heading, Text, HStack, VStack, Button } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import Link from '@/components/gatsby-link';
 
@@ -24,7 +24,7 @@ type EdgesType = {
 };
 
 const NoteList = ({ edges }: EdgesType) => (
-  <VStack spacing="8">
+  <Grid gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} gridGap="10">
     {edges.map((edge) => (
       <VStack
         spacing="2"
@@ -32,40 +32,37 @@ const NoteList = ({ edges }: EdgesType) => (
         key={edge.node.fields.slug}
         width="100%"
       >
-        <HStack spacing="2">
-          <Text
-            as="time"
-            fontSize="sm"
-            fontWeight="bold"
-            textTransform="uppercase"
-          >
-            {edge.node.fields.date}
-          </Text>
-          <Text
-            as="small"
-            fontSize="sm"
-            color="secondary.400"
-            fontWeight="bold"
-          >
-            {edge.node.frontmatter.category}
-          </Text>
-        </HStack>
         <Link to={edge.node.fields.slug}>
-          <Heading as="h2" variant="title" mt="0">
-            {edge.node.fields.title}
-          </Heading>
-        </Link>
-        <Text noOfLines={3}>
-          {edge.node.excerpt || edge.node.frontmatter.description}
-        </Text>
-        <Link to={edge.node.fields.slug}>
-          <Button variant="ghost" ml="-18px">
-            Read More
-          </Button>
+          <HStack as="article" spacing="2">
+            <Text
+              as="time"
+              fontSize="sm"
+              fontWeight="bold"
+              textTransform="uppercase"
+            >
+              {edge.node.fields.date}
+            </Text>
+            <Text
+              as="small"
+              fontSize="sm"
+              color="secondary.400"
+              fontWeight="bold"
+            >
+              {edge.node.frontmatter.category}
+            </Text>
+          </HStack>
+          <Link to={edge.node.fields.slug}>
+            <Heading as="h2" variant="title" mt="0">
+              {edge.node.fields.title}
+            </Heading>
+          </Link>
+          <Text noOfLines={3}>
+            {edge.node.excerpt || edge.node.frontmatter.description}
+          </Text>
         </Link>
       </VStack>
     ))}
-  </VStack>
+  </Grid>
 );
 
 export default NoteList;
