@@ -75,7 +75,7 @@ const onCreateNode = ({ node, actions, getNode }) => {
       });
     }
 
-    console.log(processedFrontmatterDate, processedFileDate);
+    // console.log(processedFrontmatterDate, processedFileDate);
 
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map(
