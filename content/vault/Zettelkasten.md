@@ -1,11 +1,12 @@
 ---
-title: zettelkasten
 tags:
   - pkm
   - zettelkasten
   - learning
   - notes
 ---
+
+# No Title
 
 Zettelkasten is a Note Taking Process and a Knowledge Management System. It has 3 types of notes…
 

@@ -1,8 +1,4 @@
----
-title: Tutorial
----
-
-# Tutorial
+# No Meta
 
 ## How to use this starter?
 
