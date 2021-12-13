@@ -92,5 +92,26 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Inter',
+              variants: ['400', '700'],
+              fontDisplay: 'swap',
+            },
+            {
+              family: 'Space Mono',
+              variants: ['400'],
+              fontDisplay: 'swap',
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: true,
+      },
+    },
   ],
 };
